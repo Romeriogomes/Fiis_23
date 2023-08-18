@@ -95,8 +95,8 @@ def Extract ():
     dfFiis = pd.merge(dfb5, dfFiis7, left_index=True, right_index= True)
 
 #print(dfFiis1,dfFiis2)
-#if __name__ == '__Extract__':
-Extract()
+if __name__ == '__main__':
+    Extract()
 
 print("Finalizou")
 
