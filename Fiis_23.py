@@ -85,18 +85,16 @@ def Extract ():
         dic_Rentabilidade['Rentabilidade'].append(Rentabilidades.text)
         dfFiis6 = pd.DataFrame(dic_Rentabilidade, columns=None)
 
-    #return dfFiis1,dfFiis2,dfFiis3,dfFiis4,dfFiis5,dfFiis6,dfFiis7
-
-    dfb = pd.merge(dfFiis1 , dfFiis2, left_index=True, right_index= True)
-    dfb1 = pd.merge(dfFiis3, dfFiis4, left_index=True, right_index= True)
-    dfb3 = pd.merge(dfFiis5, dfFiis6, left_index=True, right_index= True)
-    dfb4 = pd.merge(dfb, dfb1, left_index=True, right_index= True)
-    dfb5 = pd.merge(dfb4, dfb3, left_index=True, right_index= True)
-    dfFiis = pd.merge(dfb5, dfFiis7, left_index=True, right_index= True)
-
+    return dfFiis1,dfFiis2,dfFiis3,dfFiis4,dfFiis5,dfFiis6,dfFiis7
 #print(dfFiis1,dfFiis2)
 if __name__ == '__main__':
     Extract()
+dfb = pd.merge(dfFiis1 , dfFiis2, left_index=True, right_index= True)
+dfb1 = pd.merge(dfFiis3, dfFiis4, left_index=True, right_index= True)
+dfb3 = pd.merge(dfFiis5, dfFiis6, left_index=True, right_index= True)
+dfb4 = pd.merge(dfb, dfb1, left_index=True, right_index= True)
+dfb5 = pd.merge(dfb4, dfb3, left_index=True, right_index= True)
+dfFiis = pd.merge(dfb5, dfFiis7, left_index=True, right_index= True)
 
 print("Finalizou")
 
