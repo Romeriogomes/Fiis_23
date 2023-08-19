@@ -42,13 +42,13 @@ Dividendo = navegador.find_elements(By.XPATH, value='//*[@data-collum="collum-di
 Rentabilidade = navegador.find_elements(By.XPATH, value='//*[@data-collum="collum-rentabilidade_mes"]')
 Data = dataHotenFormat
 print("Tabela Encontrada")
-#Fundos = Fundo[0]
-# Setors = Setor[0]
-# Valores = Valor[0]
-# PvPs = PvP[0]
-# Dividendos = Dividendo[0]
-# Rentabilidades =Rentabilidade[0]
-# Datas = Data[0]
+Fundos = Fundo[0]
+Setors = Setor[0]
+Valores = Valor[0]
+PvPs = PvP[0]
+Dividendos = Dividendo[0]
+Rentabilidades =Rentabilidade[0]
+Datas = Data[0]
 
 
 #def Extract ():
