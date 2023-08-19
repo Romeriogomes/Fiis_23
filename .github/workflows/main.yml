@@ -19,8 +19,8 @@ jobs:
       - name: instalar web driver
         run: pip install webdriver-manager
 
-      # - name: instalar Pandas
-      #   run: pip install pandas
+      - name: instalar Pandas
+        run: pip install pandas
 
       
 
