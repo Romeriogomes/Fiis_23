@@ -51,41 +51,41 @@ print("Tabela Encontrada")
 # Datas = Data[0]
 
 
-def Extract ():
+#def Extract ():
 
-    for Fundos in Fundo :
-        print("extraindo...")
-        dic_Fundo['Fundo'].append(Fundos.text)
-        global dfFiis1
-        dfFiis1 = pd.DataFrame(dic_Fundo, columns=None)
-        dic_Data['Data'].append(Data)
-        global dfFiis7
-        dfFiis7 = pd.DataFrame(dic_Data, columns=None)
-    for Setores in Setor :
-        dic_Setor['Setor'].append(Setores.text)
-        global dfFiis2
-        dfFiis2= pd.DataFrame(dic_Setor, columns=None)
-    for Valores in Valor :
-        dic_Valor['Valor'].append(Valores.text)
-        global dfFiis3
-        dfFiis3= pd.DataFrame(dic_Valor, columns=None)
-    for PvPs in PvP :
-        dic_PvP['PvP'].append(PvPs.text)
-        global dfFiis4
-        dfFiis4 = pd.DataFrame(dic_PvP, columns=None)
-    for Dividendos in Dividendo :
-        dic_Dividendo['Dividendo'].append(Dividendos.text)
-        global dfFiis5
-        dfFiis5 = pd.DataFrame(dic_Dividendo, columns=None)
-    for Rentabilidades in Rentabilidade :
-        dic_Rentabilidade['Rentabilidade'].append(Rentabilidades.text)
-        global dfFiis6
-        dfFiis6 = pd.DataFrame(dic_Rentabilidade, columns=None)
+for Fundos in Fundo :
+    print("extraindo...")
+    dic_Fundo['Fundo'].append(Fundos.text)
+    global dfFiis1
+    dfFiis1 = pd.DataFrame(dic_Fundo, columns=None)
+    dic_Data['Data'].append(Data)
+    global dfFiis7
+    dfFiis7 = pd.DataFrame(dic_Data, columns=None)
+for Setores in Setor :
+    dic_Setor['Setor'].append(Setores.text)
+    global dfFiis2
+    dfFiis2= pd.DataFrame(dic_Setor, columns=None)
+for Valores in Valor :
+    dic_Valor['Valor'].append(Valores.text)
+    global dfFiis3
+    dfFiis3= pd.DataFrame(dic_Valor, columns=None)
+for PvPs in PvP :
+    dic_PvP['PvP'].append(PvPs.text)
+    global dfFiis4
+    dfFiis4 = pd.DataFrame(dic_PvP, columns=None)
+for Dividendos in Dividendo :
+    dic_Dividendo['Dividendo'].append(Dividendos.text)
+    global dfFiis5
+    dfFiis5 = pd.DataFrame(dic_Dividendo, columns=None)
+for Rentabilidades in Rentabilidade :
+    dic_Rentabilidade['Rentabilidade'].append(Rentabilidades.text)
+    global dfFiis6
+    dfFiis6 = pd.DataFrame(dic_Rentabilidade, columns=None)
 
     #return dfFiis1,dfFiis2,dfFiis3,dfFiis4,dfFiis5,dfFiis6,dfFiis7
 #print(dfFiis1,dfFiis2)
-if __name__ == '__main__':
-    Extract()
+# if __name__ == '__main__':
+#     Extract()
 dfb = pd.merge(dfFiis1 , dfFiis2, left_index=True, right_index= True)
 dfb1 = pd.merge(dfFiis3, dfFiis4, left_index=True, right_index= True)
 dfb3 = pd.merge(dfFiis5, dfFiis6, left_index=True, right_index= True)
