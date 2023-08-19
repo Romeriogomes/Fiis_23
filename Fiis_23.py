@@ -82,7 +82,7 @@ def Extract ():
         global dfFiis6
         dfFiis6 = pd.DataFrame(dic_Rentabilidade, columns=None)
 
-    return dfFiis1,dfFiis2,dfFiis3,dfFiis4,dfFiis5,dfFiis6,dfFiis7
+    #return dfFiis1,dfFiis2,dfFiis3,dfFiis4,dfFiis5,dfFiis6,dfFiis7
 #print(dfFiis1,dfFiis2)
 if __name__ == '__main__':
     Extract()
