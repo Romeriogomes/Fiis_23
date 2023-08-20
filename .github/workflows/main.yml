@@ -1,6 +1,11 @@
 name: run Fiis_23.py
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+
+  push:
+    branches:
+      - "fix/navegador-docker"
 
 jobs:
   run_schedule:
