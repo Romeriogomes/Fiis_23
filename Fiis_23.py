@@ -17,7 +17,7 @@ headers = {'User-Agent': "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/
     (KHTML, like Gecko) Chrome / 86.0.4240.198Safari / 537.36"}
 options = Options()
 options.headless = True
-navegador = webdriver.Chrome(options=options)
+navegador = webdriver.Remote('http://localhost:4444/wd/hub', options=options)
 link = "https://www.fundsexplorer.com.br/ranking"
 navegador.get(url=link)
 sleep(5)
@@ -121,13 +121,13 @@ def main():
         with open('token.json', 'w') as token:
             token.write(creds.to_json())
 
-   
+
     service = build('sheets', 'v4', credentials=creds)
 
     # Call the Sheets API
     sheet = service.spreadsheets()
     result = sheet.values().append(spreadsheetId="1CDh4Z2M8ccWe6Oj5pew1bBNIEuZ015OuwIz_MkXqSR8",
-                            range='Página2!A1' , valueInputOption="USER_ENTERED", 
+                            range='Página2!A1' , valueInputOption="USER_ENTERED",
                                 body = dict(
                                     majorDimension = 'ROWS',
                                     values=dfFiis.T.reset_index().T.values.tolist())).execute()
@@ -138,4 +138,4 @@ if __name__ == '__main__':
     main()
 
 
-    
+
