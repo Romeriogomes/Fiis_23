@@ -1,35 +1,32 @@
 name: run Fiis_23.py
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+
+  push:
+    branches:
+      - "fix/navegador-docker"
 
 jobs:
   run_schedule:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
 
-      - name: check conteudo do repositorio
-        uses: actions/checkout@v3
+      - name: Sobe o container do navegador
+        run: docker compose up -d
 
       - name: instalar python
         uses: actions/setup-python@v3
+        with:
+          python-version: '3.9'
+          cache: 'pip'
 
-      - name: instalar Selenium
-        run: pip install selenium
+      - name: instalar os todos os pacotes
+        run: pip install -r requirements.txt
 
-      - name: instalar web driver
-        run: pip install webdriver-manager
-
-      - name: instalar Pandas
-        run: pip install pandas
-      
-      - name: Google Api
-        run: pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
-
-      
-
-      # - name: instalar os todos os pacotes
-      #   run: pip install -r requirements.txt
-       
+      - name: Verifica container de pe
+        run: docker ps
 
       - name: executar arquivo de scrapping
         run: python Fiis_23.py
