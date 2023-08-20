@@ -1,0 +1,9 @@
+version: "3.9"
+services:
+  brownser:
+    container_name: chrome
+    image: selenium/standalone-chrome:114.0
+    shm_size: '2g'
+    ports:
+      - 4444:4444
+      - 7900:7900
