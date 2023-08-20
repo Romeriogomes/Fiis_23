@@ -16,7 +16,7 @@ from googleapiclient.errors import HttpError
 headers = {'User-Agent': "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 \
     (KHTML, like Gecko) Chrome / 86.0.4240.198Safari / 537.36"}
 options = Options()
-options.headless = True
+options.add_argument('--headless=new')
 navegador = webdriver.Remote('http://localhost:4444/wd/hub', options=options)
 link = "https://www.fundsexplorer.com.br/ranking"
 navegador.get(url=link)

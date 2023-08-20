@@ -25,5 +25,8 @@ jobs:
       - name: instalar os todos os pacotes
         run: pip install -r requirements.txt
 
+      - name: Verifica container de pe
+        run: docker ps
+
       - name: executar arquivo de scrapping
         run: python Fiis_23.py
