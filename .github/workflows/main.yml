@@ -1,8 +1,10 @@
 name: run Fiis_23.py
 
-on:
-  schedule:
-    - cron: '5 3 * * *'
+# on:
+#   schedule:
+#     - cron: '5 3 * * *'
+
+on: workflow_dispatch
 
   push:
     branches:
